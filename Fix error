@@ -1,0 +1,20 @@
+The latest version of firmware for the J-Link OB-STM32F072-CortexM to 26 September 2016 contains an error in the implementation of the COM transmission.
+
+To fix you need to change a few bytes:
+
+Address   Old New
+
+0800BD90: 90 00
+0800BD91: 20 BF
+0800BD92: C0 00
+0800BD93: 05 BF
+0800BD94: 01 00
+0800BD95: 68 BF
+0800BD96: 6F 00
+0800BD97: 4A BF
+0800BD98: 0A 00
+0800BD99: 40 BF
+0800BD9A: 02 00
+0800BD9B: 60 BF
+ 
+It may also need to connect PA7 with ground.
